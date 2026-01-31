@@ -351,28 +351,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* About Section */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Over de maker</h2>
-          <p className="text-gray-600">
-            Ik ben Bart, een Belgische webontwikkelaar en ondernemer. Als eigenaar van{' '}
-            <a href="https://hazier.be" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:text-yellow-800 underline">
-              Hazier
-            </a>{' '}
-            en co-founder van{' '}
-            <a href="https://collectpro.be" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:text-yellow-800 underline">
-              CollectPro
-            </a>{' '}
-            bouw ik graag handige online tools die het dagelijks leven makkelijker maken — gratis en zonder poespas.
-          </p>
-          <p className="text-gray-600 mt-3">
-            Vragen of suggesties? Mail gerust naar{' '}
-            <a href="mailto:info@hazier.be" className="text-yellow-600 hover:text-yellow-800 underline">
-              info@hazier.be
-            </a>
-          </p>
-        </div>
-
         <Footer />
       </div>
     </main>
