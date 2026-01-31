@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 interface PriceData {
   hour: number;
@@ -88,7 +90,9 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-yellow-50 to-orange-100">
+    <>
+      <Header />
+      <main className="min-h-screen bg-gradient-to-b from-yellow-50 to-orange-100">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -369,15 +373,9 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Footer */}
-        <footer className="text-center text-gray-500 mt-8 pb-8">
-          <p>© {new Date().getFullYear()} Goedkoopstroom.be - Dynamische stroomprijzen</p>
-          <p className="text-sm mt-2">Prijzen zijn indicatief en exclusief belastingen</p>
-          <p className="mt-2">
-            <a href="/over-mij" className="text-yellow-600 hover:text-yellow-800 underline">Over de maker</a>
-          </p>
-        </footer>
+        <Footer />
       </div>
     </main>
+    </>
   );
 }
