@@ -1,7 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { usePathname } from 'next/navigation';
+
+function btn(bg: string, size: number): CSSProperties {
+  return {
+    width: size,
+    height: size,
+    borderRadius: 999,
+    background: bg,
+    color: 'white',
+    display: 'grid',
+    placeItems: 'center',
+    textDecoration: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
+    fontWeight: 700,
+    fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
+    lineHeight: 1,
+  };
+}
 
 export default function FloatingShare() {
   const pathname = usePathname();
@@ -9,7 +28,7 @@ export default function FloatingShare() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setUrl(window.location.href);
+    setUrl(typeof window !== 'undefined' ? window.location.href : '');
   }, [pathname]);
 
   useEffect(() => {
@@ -21,17 +40,18 @@ export default function FloatingShare() {
 
   const text = 'Check de goedkoopste stroom per uur op goedkoopstroom.be';
 
-  const encodedUrl = encodeURIComponent(url);
-  const encodedText = encodeURIComponent(text);
+  const links = useMemo(() => {
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
+    return {
+      whatsapp: `https://wa.me/?text=${encodedText}%20${encodedUrl}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      x: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+    };
+  }, [url]);
 
-  const links = {
-    whatsapp: `https://wa.me/?text=${encodedText}%20${encodedUrl}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-    x: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
-  };
-
-  async function nativeShare() {
+  const nativeShare = async () => {
     try {
       if (navigator.share) {
         await navigator.share({ title: 'Goedkoopste Stroom', text, url });
@@ -39,15 +59,15 @@ export default function FloatingShare() {
     } catch {
       // ignore
     }
-  }
+  };
 
-  async function copyLink() {
+  const copyLink = async () => {
     try {
       await navigator.clipboard.writeText(url);
     } catch {
       // ignore
     }
-  }
+  };
 
   if (!url) return null;
 
@@ -98,32 +118,13 @@ export default function FloatingShare() {
         in
       </a>
       <button type="button" onClick={copyLink} style={btn('#6B7280', size)} aria-label="Kopieer link">
-        ⧉
+        Kopie
       </button>
       {typeof navigator !== 'undefined' && 'share' in navigator && (
         <button type="button" onClick={nativeShare} style={btn('#F97316', size)} aria-label="Delen">
-          ↗
+          Deel
         </button>
       )}
     </div>
   );
-}
-
-function btn(bg: string, size: number): React.CSSProperties {
-  return {
-    width: size,
-    height: size,
-    borderRadius: 999,
-    background: bg,
-    color: 'white',
-    display: 'grid',
-    placeItems: 'center',
-    textDecoration: 'none',
-    border: 'none',
-    cursor: 'pointer',
-    boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
-    fontWeight: 700,
-    fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif',
-    lineHeight: 1,
-  };
 }
