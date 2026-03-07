@@ -19,7 +19,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden sm:flex items-center gap-5 text-sm text-primary-200">
-          <Link href="/over" className="hover:text-white transition-colors">
+          <Link href="/over-mij" className="hover:text-white transition-colors">
             Over
           </Link>
           <Link href="/privacy" className="hover:text-white transition-colors">
@@ -57,7 +57,7 @@ export default function Header() {
       {menuOpen && (
         <div className="sm:hidden border-t border-primary-700/30 bg-primary-800/98 backdrop-blur-md">
           <nav className="flex flex-col px-4 py-3 text-sm text-primary-200 gap-3">
-            <Link href="/over" className="hover:text-white" onClick={() => setMenuOpen(false)}>Over</Link>
+            <Link href="/over-mij" className="hover:text-white" onClick={() => setMenuOpen(false)}>Over</Link>
             <Link href="/privacy" className="hover:text-white" onClick={() => setMenuOpen(false)}>Privacy</Link>
             <Link href="/contact" className="hover:text-white" onClick={() => setMenuOpen(false)}>Contact</Link>
           </nav>

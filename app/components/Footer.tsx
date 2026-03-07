@@ -20,8 +20,7 @@ export default function Footer() {
             </h4>
             <nav className="flex flex-col gap-2 text-sm">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <Link href="/over" className="hover:text-white transition-colors">Over</Link>
-              <Link href="/over-mij" className="hover:text-white transition-colors">Over de maker</Link>
+              <Link href="/over-mij" className="hover:text-white transition-colors">Over</Link>
               <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             </nav>
           </div>
