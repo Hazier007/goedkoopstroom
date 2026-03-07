@@ -1,4 +1,5 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
+import PageWrapper from '../components/PageWrapper';
 
 export const metadata: Metadata = {
   title: 'Disclaimer | Goedkoopstroom.be',
@@ -6,16 +7,16 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-gray-900">Disclaimer - Goedkoopstroom.be</h1>
-      <p className="mt-2 text-sm text-gray-500">Laatst bijgewerkt: 2026-02-02</p>
+    <PageWrapper>
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Disclaimer</h1>
+      <p className="text-sm text-gray-400 mb-6">Laatst bijgewerkt: 2 februari 2026</p>
 
-      <div className="prose prose-gray mt-6 max-w-none">
+      <div className="prose prose-gray max-w-none prose-headings:text-gray-800 prose-a:text-primary-600">
         <p>De informatie en tools op goedkoopstroom.be zijn bedoeld voor algemene informatiedoeleinden. We doen ons best om alles correct en up-to-date te houden, maar we geven geen garanties over volledigheid of juistheid.</p>
-<p>Gebruik van calculators/tools gebeurt op eigen verantwoordelijkheid. Goedkoopstroom.be is niet aansprakelijk voor schade die voortvloeit uit het gebruik van de website of de resultaten.</p>
-<p>Externe links vallen buiten onze controle.</p>
-<p>Vragen: <a href="mailto:info@hazier.be">info@hazier.be</a>.</p>
+        <p>Gebruik van calculators/tools gebeurt op eigen verantwoordelijkheid. Goedkoopstroom.be is niet aansprakelijk voor schade die voortvloeit uit het gebruik van de website of de resultaten.</p>
+        <p>Externe links vallen buiten onze controle.</p>
+        <p>Vragen: <a href="mailto:info@hazier.be">info@hazier.be</a>.</p>
       </div>
-    </main>
+    </PageWrapper>
   );
 }
