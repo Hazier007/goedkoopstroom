@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import Script from "next/script";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
@@ -66,13 +65,6 @@ export default function Home() {
     <>
       <Header />
       <FAQSchema />
-
-      {/* AdSense script */}
-      <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1772283634325864"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-      />
 
       <main className="min-h-screen bg-gray-50">
         <HeroSection data={data} loading={loading} />
