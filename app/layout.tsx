@@ -3,13 +3,24 @@ import CookieBanner from "./components/CookieBanner";
 
 import Analytics from "./components/Analytics";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import FloatingShare from "./components/FloatingShare";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"],
 });
-export const metadata: Metadata = { title: "Goedkoopste Stroom | Dynamische stroomprijzen per uur", description: "Bekijk de actuele dynamische stroomprijzen per uur. Ontdek wanneer elektriciteit het goedkoopst is en bespaar op je energierekening.", keywords: "stroomprijs, dynamische tarieven, goedkope stroom, energieprijzen, elektriciteit, spot prijs, EPEX, dag-ahead", openGraph: { title: "Goedkoopste Stroom | Dynamische stroomprijzen", description: "Bekijk de actuele dynamische stroomprijzen per uur en bespaar op je energierekening.", type: "website", locale: "nl_BE", },
+export const metadata: Metadata = {
+  title: "Stroomprijs Vandaag Belgie | Dynamische Stroomprijzen per Uur",
+  description:
+    "Check de stroomprijs vandaag in Belgie per uur. Zie de goedkoopste uren, mogelijke negatieve stroomprijzen en praktische bespaartips.",
+  keywords:
+    "stroomprijs vandaag belgie, dynamische stroomprijzen, negatieve stroomprijs belgie, goedkoopste stroom uren, day-ahead prijs",
+  openGraph: {
+    title: "Stroomprijs Vandaag Belgie | Dynamische Stroomprijzen per Uur",
+    description:
+      "Bekijk de actuele uurprijzen voor Belgie en plan je verbruik op de goedkoopste stroomuren.",
+    type: "website",
+    locale: "nl_BE",
+  },
 };
 export default function RootLayout({ children,
 }: Readonly<{ children: React.ReactNode }>) { return ( <html lang="nl"> {" "} <head>

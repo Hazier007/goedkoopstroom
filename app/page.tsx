@@ -92,6 +92,16 @@ export default function Home() {
               Deze pagina toont de <strong>uurprijzen</strong> van dynamische energiecontracten (day-ahead).
               De goedkoopste uren zijn ideaal om wasmachine, droogkast of vaatwasser te laten draaien of je EV te laden.
             </p>
+            <div className="rounded-xl bg-blue-50 border border-blue-100 p-4 mb-5">
+              <h3 className="font-semibold text-blue-900 mb-2">
+                Stroomprijs vandaag in Belgie: snelle leeswijzer
+              </h3>
+              <ul className="list-disc pl-5 space-y-1 text-sm text-blue-900/90">
+                <li>Bekijk eerst het goedkoopste uur en plan verbruik in dat venster.</li>
+                <li>Controleer daarna de duurste uren zodat je piekverbruik vermijdt.</li>
+                <li>Bij negatieve prijzen kan extra verbruik tijdelijk voordelig zijn.</li>
+              </ul>
+            </div>
 
             <div className="grid sm:grid-cols-3 gap-3 mb-6">
               <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-4">

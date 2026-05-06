@@ -27,10 +27,13 @@ export default function HeroSection({ data, loading }: Props) {
       <div className="relative max-w-5xl mx-auto px-4 py-14 md:py-20">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-            Dynamische Stroomprijzen
+            Stroomprijs Vandaag Belgie
           </h1>
           <p className="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">
-            Bekijk de actuele uurprijzen en bespaar op je energierekening door slim te verbruiken
+            Volg de dynamische stroomprijzen per uur en verbruik slim tijdens de goedkoopste uren.
+          </p>
+          <p className="mt-3 text-sm md:text-base text-primary-200 max-w-2xl mx-auto">
+            Inclusief indicatie van negatieve stroomprijzen en piekuren in Belgie.
           </p>
         </div>
 
