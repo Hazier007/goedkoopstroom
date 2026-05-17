@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
@@ -123,6 +124,24 @@ export default function Home() {
             <>
               <PriceChart data={data} />
               <PriceTable data={data} />
+
+              {/* Daisycon energy provider comparison widget */}
+              <section className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-8">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                  Vergelijk dynamische energiecontracten
+                </h2>
+                <p className="text-gray-600 mb-5">
+                  Vergelijk hieronder de actuele energiecontracten van Belgische leveranciers en kies het tarief dat het best past bij jouw verbruik.
+                </p>
+                <Script
+                  src="https://daisycon.tools/energy-be/app.js"
+                  strategy="afterInteractive"
+                />
+                <div
+                  className="dc-tool dc-energy-tool"
+                  data-config='{"mediaId":420740,"locale":"nl-BE","buttonText":"Bekijken","showFilters":true,"limit":10}'
+                />
+              </section>
 
               {/* Ad between price data and tips */}
               <AdSlot slot="mid-content" format="auto" />
